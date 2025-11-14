@@ -73,6 +73,8 @@ return {
       local source_actions = vim.tbl_filter(function(action)
         return vim.startswith(action, 'source.')
       end, client.server_capabilities.codeActionProvider.codeActionKinds)
+ 
+      client.server_capabilities.documentFormattingProvider = true
 
       vim.lsp.buf.code_action({
         context = {

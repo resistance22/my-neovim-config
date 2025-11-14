@@ -11,6 +11,9 @@ return {
 		    enable = true,
 		    update_cwd = true,  -- optional: change cwd to the file's directory
 	    },
+	    view = {
+		    adaptive_size = true
+	    }
     }
     local api = require("nvim-tree.api")
     vim.keymap.set("n", "<leader>e", function()

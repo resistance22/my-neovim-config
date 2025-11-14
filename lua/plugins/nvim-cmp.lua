@@ -22,9 +22,10 @@ return {
 			  { name = "path" },
 		  },
 	  })
-	  
+
 	  local capabilities = vim.lsp.protocol.make_client_capabilities()
 	  capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
-
+	  vim.lsp.config = vim.lsp.config or {}
+	  vim.lsp.config.capabilities = capabilities
   end,
 }
