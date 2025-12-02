@@ -17,3 +17,5 @@ vim.keymap.set("n", "<leader>lg", "<cmd>Telescope live_grep<CR>", {
 	silent = true,
 	desc = "Global Search (live grep)"
 })
+
+vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = bufnr })
