@@ -14,6 +14,18 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = { "*.js", "*.jsx", "*.ts", "*.tsx" },
+  callback = function()
+    vim.lsp.buf.code_action({
+      apply = true,
+      context = {
+        only = { "source.fixAll.eslint" },
+      },
+    })
+  end,
+})
+
 vim.diagnostic.config({
 	virtual_lines = {
 		current_line = true

@@ -1,11 +1,13 @@
 return {
-  'esmuellert/nvim-eslint',
+  "esmuellert/nvim-eslint",
   config = function()
-    require('nvim-eslint').setup({
-      format = true,
-      codeActionOnSave = {
-        ["source.fixAll"] = "always",  -- Apply all fixable issues on save
-      }
+    require("nvim-eslint").setup({
+      settings = {
+        format = true,                -- 🔥 THIS WAS MISSING EFFECTIVELY
+        codeActionOnSave = {
+          mode = "all",
+        },
+      },
     })
   end,
 }
