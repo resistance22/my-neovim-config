@@ -19,3 +19,7 @@ vim.keymap.set("n", "<leader>lg", "<cmd>Telescope live_grep<CR>", {
 })
 
 vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = bufnr })
+
+vim.keymap.set("n", "<leader>cp", function()
+  vim.fn.setreg("+", vim.fn.expand("%:p"))
+end)
